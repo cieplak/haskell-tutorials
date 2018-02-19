@@ -1,7 +1,12 @@
 -- From the command line:
 -- $ runhaskell Arrows.hs
 
-import Control.Arrow as A
+import Control.Arrow ((>>>))
+
+import Prelude hiding ((>))
+
+-- (>) = (>>>)
+(>) f g = g . f
 
 addHello       = (++ "Hello")
 addSpace       = (++ " ")
@@ -10,7 +15,7 @@ addExclamation = (++ "!")
 
 greetingA = (putStrLn . addExclamation . addWorld . addSpace . addHello) ""
 
-greetingB = (addHello >>> addSpace >>> addWorld >>> addExclamation >>> putStrLn) ""
+greetingB = (addHello > addSpace > addWorld > addExclamation > putStrLn) ""
 
 main = do
   greetingA
