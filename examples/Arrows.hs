@@ -8,10 +8,8 @@ import Prelude hiding ((>))
 -- (>) = (>>>)
 (>) f g = g . f
 
-addHello       = (++ "Hello")
-addSpace       = (++ " ")
-addWorld       = (++ "World")
-addExclamation = (++ "!")
+(addHello, addSpace, addWorld, addExclamation) =
+  ((++ "Hello"), (++ " "), (++ "World"), (++ "!"))
 
 greetingA = (putStrLn . addExclamation . addWorld . addSpace . addHello) ""
 
