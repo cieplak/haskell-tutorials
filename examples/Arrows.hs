@@ -1,5 +1,5 @@
 -- From the command line:
--- $ runhaskell Arrow.hs
+-- $ runhaskell Arrows.hs
 
 import Control.Arrow as A
 
